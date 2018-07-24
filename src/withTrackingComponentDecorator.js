@@ -44,7 +44,8 @@ export default function withTrackingComponentDecorator(
       trackEvent = data => {
         this.getTrackingDispatcher()(
           // deep-merge tracking data from context and tracking data passed in here
-          merge(this.trackingData || {}, data || {})
+          merge(this.trackingData || {}, data || {}),
+          this.props
         );
       };
 
